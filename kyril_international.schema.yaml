@@ -5,7 +5,7 @@
 schema:
   schema_id: kyril_international
   name: "基利爾字母混合輸入"
-  version: "2018.05.08"
+  version: "2020.05.08"
   author:
     - polyhedron<biopolyhedron@gmail.com>
   description: |
