@@ -5,7 +5,7 @@
 schema:
   schema_id: kyril_international
   name: "基利爾字母混合輸入"
-  version: "poly2013.01.27"
+  version: "2020.05.08"
   author:
     - polyhedron<biopolyhedron@gmail.com>
   description: |
@@ -25,12 +25,12 @@ engine:
     - speller
     - punctuator  # 先於 editor 才會使空格作符號上屏
     - selector
-    - punct_segmentor
     - navigator
     - express_editor
   segmentors:
     - ascii_segmentor
     - abc_segmentor
+    - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
@@ -48,7 +48,7 @@ speller:
 translator:
   dictionary: kyril_international
   enable_user_dict: false
-  enable_sentence: true
+  enable_sentence: false
   comment_format:
     - xform/^~(.*)$/$1/
 
@@ -66,13 +66,8 @@ recognizer:
   patterns:
     reverse_lookup: "`[a-z]*$"
 
-
-#ascii_composer/switch_key: #目前還不能設定全大寫模式
-#    Caps_Lock: noop
-
 punctuator:
   use_space: true
-#  import_preset: default
   half_shape: &punct
     ' ' : { commit: ' ' }
   full_shape: *punct
